@@ -5,7 +5,12 @@ import roleValidate from "../middleware/roleValidate.js";
 
 const router = express.Router();
 //http://localhost:3001/api/user/registerRole
-router.post("/registerUser", userValidate.existingUser, roleValidate.existingRole,userController.registerUser);
+router.post(
+  "/registerUser",
+  userValidate.existingUser,
+  roleValidate.existingRole,
+  userController.registerUser
+);
 router.get("/listUser/:name?", userController.listUsers);
 
 export default router;

@@ -1,4 +1,4 @@
-import user from "../models/user.js"
+import user from "../models/user.js";
 const existingUser = async (req, res, next) => {
   if (!req.body.email)
     return res.status(400).send({ menssage: "Incomplete data." });
