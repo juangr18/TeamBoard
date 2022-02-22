@@ -26,6 +26,9 @@ const listTask = async (req, res) => {
     : res.status(200).send({ tasks });
 };
 
+/**
+ * Metodo para cambiar el estado de la tarea
+ */
 const changeStateTask = async (req, res) => {
   const taskState = await task.findByIdAndUpdate(req.body._id, {
     taskStatus: req.body.taskStatus,
@@ -34,7 +37,9 @@ const changeStateTask = async (req, res) => {
     ? res.status(200).send({ message: "Status changed task" })
     : res.status(500).send({ message: "Error changing task status" });
 };
-
+/**
+ * Metodo de actualizar campos de tarea
+ */
 const updateTask = async (req, res) => {
   const taskEdit = await task.findByIdAndUpdate(req.body._id, {
     name: req.body.name,
